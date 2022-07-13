@@ -1,12 +1,11 @@
-{% set name = "jsx-lexer" %}
 {% set version = "2.0.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: jsx-lexer
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/j/jsx-lexer/jsx-lexer-{{ version }}.tar.gz
   sha256: ca22483ced80a92e45fa1855da7cf99309852c0637842a79a759e10ea57b904d
 
 build:
@@ -19,7 +18,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - pygments >=2.7
+    - pygments >=2.12.0
     - python >=3.6
 
 test:
