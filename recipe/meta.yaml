@@ -5,13 +5,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jsx-lexer/jsx-lexer-{{ version }}.tar.gz
-  sha256: ca22483ced80a92e45fa1855da7cf99309852c0637842a79a759e10ea57b904d
+  - folder: dist
+    url: https://pypi.io/packages/source/j/jsx-lexer/jsx-lexer-{{ version }}.tar.gz
+    sha256: ca22483ced80a92e45fa1855da7cf99309852c0637842a79a759e10ea57b904d
+  - folder: src
+    url: https://github.com/fcurella/jsx-lexer/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: b7b5bd4bc502cbf34bcfc4cf1b0c87dba27ed0ec78d66003e08e9a391be52741
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: cd dist && {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -23,22 +27,21 @@ requirements:
 
 test:
   source_files:
-    - tests
+    - src/tests
   imports:
     - jsx
   commands:
     - pip check
-    - pytest --cov jsx --cov-report term-missing:skip-covered --cov-fail-under 100
+    - pytest src/tests -vv --cov=jsx --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=100
   requires:
     - pip
-    - pytest
     - pytest-cov
 
 about:
   home: https://pypi.org/project/jsx-lexer
   summary: A JSX lexer for Pygments
   license: MIT
-  license_file: LICENSE
+  license_file: dist/LICENSE
   dev_url: https://github.com/fcurella/jsx-lexer
 
 extra:
