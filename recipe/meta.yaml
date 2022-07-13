@@ -1,5 +1,5 @@
 {% set name = "jsx-lexer" %}
-{% set version = "1.0.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b5f5270cad47b065417fd7bdb780199d5166bd4a88a2a0fd7412e90e7a59b5cc
+  sha256: ca22483ced80a92e45fa1855da7cf99309852c0637842a79a759e10ea57b904d
 
 build:
   number: 0
