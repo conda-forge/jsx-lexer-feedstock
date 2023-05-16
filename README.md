@@ -1,11 +1,11 @@
-About jsx-lexer
-===============
+About jsx-lexer-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jsx-lexer-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pypi.org/project/jsx-lexer
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jsx-lexer-feedstock/blob/main/LICENSE.txt)
 
 Summary: A JSX lexer for Pygments
 
