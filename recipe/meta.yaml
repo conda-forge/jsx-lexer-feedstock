@@ -1,4 +1,4 @@
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: jsx-lexer
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/j/jsx-lexer/jsx-lexer-{{ version }}.tar.gz
-    sha256: ca22483ced80a92e45fa1855da7cf99309852c0637842a79a759e10ea57b904d
+    sha256: 0d9aa653e74d7973d74021dde8349896c0df094d8e40349b92b35e0930ed7f71
   - folder: src
     url: https://github.com/fcurella/jsx-lexer/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: b7b5bd4bc502cbf34bcfc4cf1b0c87dba27ed0ec78d66003e08e9a391be52741
+    sha256: e07de4b3103eee0fed4accc520dad27faa94eab5e5ef4e901d024d08447f4182
 
 build:
   number: 0
