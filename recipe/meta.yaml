@@ -6,24 +6,24 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.io/packages/source/j/jsx-lexer/jsx-lexer-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/j/jsx-lexer/jsx-lexer-{{ version }}.tar.gz
     sha256: 0d9aa653e74d7973d74021dde8349896c0df094d8e40349b92b35e0930ed7f71
   - folder: src
     url: https://github.com/fcurella/jsx-lexer/archive/refs/tags/v{{ version }}.tar.gz
     sha256: e07de4b3103eee0fed4accc520dad27faa94eab5e5ef4e901d024d08447f4182
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: cd dist && {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - pygments >=2.12.0
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -36,6 +36,7 @@ test:
   requires:
     - pip
     - pytest-cov
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/jsx-lexer
