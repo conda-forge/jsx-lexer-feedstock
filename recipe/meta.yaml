@@ -40,7 +40,7 @@ test:
   commands:
     - pip check
     - cd src
-    - coverage run --source=jsx --branch -m pytest src/tests -vv --tb=long --color=yes
+    - coverage run --source=jsx --branch -m pytest -vv --tb=long --color=yes 
     - coverage report --show-missing --skip-covered --fail-under=100
 
 about:
